@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An An Hoa Ngữ - Khoá Học Nhập Hàng Trung Quốc</title>
+  <meta name="description"
+    content="Khoá học nhập hàng Trung Quốc thực chiến tận tay, không qua trung gian. Học xong tự order Taobao, 1688, kinh doanh sinh lời. Cam kết hỗ trợ cố vấn trong 3 năm!">
+  <meta property="og:title" content="An An Hoa Ngữ - Khoá Học Nhập Hàng Trung Quốc">
+  <meta property="og:description"
+    content="Khoá học nhập hàng Trung Quốc thực chiến tận tay. Học xong tự order Taobao, 1688, kinh doanh sinh lời. Cam kết hỗ trợ 3 năm!">
+  <meta property="og:image" content="https://hocnhaphangtrungquoc.com/thumbnail.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    :root {
+      --red: #bf2436;
+      --red-dark: #9a1c2a;
+      --red-light: #d94055;
+      --gold: #f9dfac;
+      --gold-dark: #e8c070;
+      --white: #fff;
+      --gray-soft: #faf6f0;
+      --text-dark: #1a1a1a;
+      --text-muted: #666
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+      padding-bottom: 70px
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+      display: inline-block;
+      text-decoration: none;
+      letter-spacing: .5px
+    }
+
+    .btn-primary:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px)
+    }
+
+    .btn-gold {
+      background: var(--gold-dark);
+      color: var(--red-dark);
+      border: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+      display: inline-block
+    }
+
+    .btn-gold:hover {
+      background: var(--gold);
+      transform: translateY(-2px)
+    }
+
+    .section-title {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 800;
+      color: var(--red);
+      line-height: 1.2
+    }
+
+    .highlight {
+      color: var(--gold-dark)
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px 180px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: rgba(249, 223, 172, .08);
+      border-radius: 50%
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -60px;
+      width: 350px;
+      height: 350px;
+      background: rgba(249, 223, 172, .06);
+      border-radius: 50%
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-visual-frame {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      aspect-ratio: 4 / 5;
+      border-radius: 24px 140px 24px 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      border: 6px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-visual-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge-glass {
+      position: absolute;
+      bottom: 30px;
+      left: -20px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 16px 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+    }
+
+    .hero-badge-glass h4 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+
+    .hero-badge-glass p {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .hero-badge {
+      background: var(--gold-dark);
+      color: var(--red-dark);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4.5vw, 50px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px
+    }
+
+    .hero-title span {
+      color: var(--gold)
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, .85);
+      line-height: 1.7;
+      margin-bottom: 30px
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 36px;
+      flex-wrap: wrap
+    }
+
+    .hero-stat {
+      text-align: center
+    }
+
+    .hero-stat .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1
+    }
+
+    .hero-stat .lbl {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .75);
+      margin-top: 4px
+    }
+
+    /* BRIDGE FORM */
+    .bridge-form {
+      position: relative;
+      z-index: 10;
+      margin-top: -120px;
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+
+    .bridge-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      align-items: center;
+      border: 1px solid #f0f0f0;
+    }
+
+    .bridge-text h2 {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--red);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .bridge-text p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .trust-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .trust-badge-icon {
+      width: 28px;
+      height: 28px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .bridge-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .bridge-form-grid .full-width {
+      grid-column: span 2;
+    }
+
+    .form-group {
+      margin-bottom: 14px
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      outline: none;
+      transition: .2s;
+      background: #fff
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--red)
+    }
+
+    .form-group select {
+      color: var(--text-dark);
+      cursor: pointer
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+      letter-spacing: .5px;
+      margin-top: 4px
+    }
+
+    .form-submit:hover {
+      background: var(--red-dark)
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 10px
+    }
+
+    /* PAIN POINTS */
+    .pain {
+      padding: 70px 20px;
+      background: var(--gray-soft)
+    }
+
+    .pain-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center
+    }
+
+    .pain-intro {
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--text-dark);
+      margin-bottom: 12px
+    }
+
+    .pain-intro span {
+      color: var(--red)
+    }
+
+    .pain-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 48px
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px
+    }
+
+    .pain-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border-left: 4px solid var(--red);
+      text-align: left
+    }
+
+    .pain-card .icon {
+      font-size: 28px;
+      margin-bottom: 12px
+    }
+
+    .pain-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px
+    }
+
+    .pain-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6
+    }
+
+    /* SOLUTION */
+    .solution {
+      padding: 70px 20px;
+      background: #fff
+    }
+
+    .solution-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .solution-img {
+      background: var(--red);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .solution-img::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: rgba(249, 223, 172, .15);
+      border-radius: 50%
+    }
+
+    .solution-img .big-num {
+      font-size: 80px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px
+    }
+
+    .solution-img .big-text {
+      font-size: 16px;
+      color: rgba(255, 255, 255, .9);
+      font-weight: 600
+    }
+
+    .solution-content .section-title {
+      margin-bottom: 20px
+    }
+
+    .solution-list {
+      list-style: none
+    }
+
+    .solution-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      font-size: 15px;
+      color: var(--text-dark);
+      line-height: 1.6
+    }
+
+    .solution-list li .check {
+      width: 22px;
+      height: 22px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-size: 12px;
+      color: #fff;
+      font-weight: 700
+    }
+
+    /* COURSES */
+    .courses {
+      padding: 70px 20px;
+      background: var(--gray-soft)
+    }
+
+    .courses-container {
+      max-width: 1100px;
+      margin: 0 auto
+    }
+
+    .courses-container .section-title {
+      text-align: center;
+      margin-bottom: 8px
+    }
+
+    .courses-sub {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      font-size: 16px
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .07);
+      transition: .2s
+    }
+
+    .course-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .12)
+    }
+
+    .course-header {
+      background: var(--red);
+      padding: 28px 24px
+    }
+
+    .course-badge {
+      background: var(--gold);
+      color: var(--red-dark);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .course-header h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 6px
+    }
+
+    .course-header .price {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--gold)
+    }
+
+    .course-header .price span {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: .8
+    }
+
+    .course-body {
+      padding: 24px
+    }
+
+    .course-features {
+      list-style: none
+    }
+
+    .course-features li {
+      padding: 8px 0;
+      border-bottom: .5px solid #f0f0f0;
+      font-size: 14px;
+      color: var(--text-dark);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.5
+    }
+
+    .course-features li:last-child {
+      border-bottom: none
+    }
+
+    .course-features li::before {
+      content: '✓';
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0
+    }
+
+    .course-cta {
+      padding: 0 24px 24px
+    }
+
+    .course-cta button {
+      width: 100%;
+      padding: 14px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      transition: .2s
+    }
+
+    .course-cta button:hover {
+      background: var(--red-dark)
+    }
+
+    .course-card.featured {
+      border: 2.5px solid var(--gold-dark)
+    }
+
+    .featured-badge {
+      background: var(--gold-dark);
+      color: var(--red-dark);
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      padding: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 70px 20px;
+      background: #fff
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto
+    }
+
+    .faq-container .section-title {
+      text-align: center;
+      margin-bottom: 8px
+    }
+
+    .faq-sub {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      font-size: 16px
+    }
+
+    .faq-item {
+      border: 1.5px solid #f0f0f0;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: .2s
+    }
+
+    .faq-item.open {
+      border-color: var(--red)
+    }
+
+    .faq-q {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-dark);
+      user-select: none
+    }
+
+    .faq-q:hover {
+      color: var(--red)
+    }
+
+    .faq-q .arrow {
+      font-size: 20px;
+      transition: .3s;
+      color: var(--red)
+    }
+
+    .faq-item.open .arrow {
+      transform: rotate(180deg)
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: .3s ease
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px
+    }
+
+    .faq-a-inner {
+      padding: 0 24px 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      border-top: 1px solid #f5f5f5
+    }
+
+    /* SOCIAL PROOF */
+    .proof {
+      padding: 70px 20px;
+      background: var(--red)
+    }
+
+    .proof-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center
+    }
+
+    .proof-title {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px
+    }
+
+    .proof-sub {
+      color: rgba(255, 255, 255, .8);
+      margin-bottom: 48px;
+      font-size: 16px
+    }
+
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 48px
+    }
+
+    .stat-item {
+      text-align: center
+    }
+
+    .stat-item .num {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1
+    }
+
+    .stat-item .lbl {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .85);
+      margin-top: 6px;
+      max-width: 140px;
+      line-height: 1.4
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px
+    }
+
+    .review-card {
+      background: rgba(255, 255, 255, .1);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+      border: 1px solid rgba(255, 255, 255, .15)
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: 16px;
+      margin-bottom: 10px
+    }
+
+    .review-text {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .9);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      font-style: italic
+    }
+
+    .review-author {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold)
+    }
+
+    /* GUARANTEE */
+    .guarantee {
+      padding: 60px 20px;
+      background: var(--gray-soft)
+    }
+
+    .guarantee-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 32px;
+      align-items: center;
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px;
+      border: 2px solid var(--red)
+    }
+
+    .guarantee-icon {
+      width: 100px;
+      height: 100px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      flex-shrink: 0
+    }
+
+    .guarantee-content h3 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--red);
+      margin-bottom: 10px
+    }
+
+    .guarantee-content p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--red) 0%, #8b1a26 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: rgba(249, 223, 172, .05);
+      border-radius: 50%
+    }
+
+    .final-cta-container {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1
+    }
+
+    .final-cta h2 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2
+    }
+
+    .final-cta h2 span {
+      color: var(--gold)
+    }
+
+    .final-cta p {
+      font-size: 17px;
+      color: rgba(255, 255, 255, .85);
+      margin-bottom: 40px;
+      line-height: 1.7
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto 20px;
+      flex-wrap: wrap
+    }
+
+    .cta-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      outline: none
+    }
+
+    .cta-form button {
+      background: var(--gold-dark);
+      color: var(--red-dark);
+      border: none;
+      padding: 16px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      white-space: nowrap;
+      transition: .2s
+    }
+
+    .cta-form button:hover {
+      background: var(--gold)
+    }
+
+    .cta-note {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .7)
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 48px 20px 28px
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 36px
+    }
+
+    .footer-brand h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 6px
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.7
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .footer-col ul {
+      list-style: none
+    }
+
+    .footer-col ul li {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 10px
+    }
+
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, .6);
+      text-decoration: none
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--gold)
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: gap;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--red);
+      padding: 14px 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, .2)
+    }
+
+    .sticky-text {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    .sticky-text span {
+      color: var(--gold)
+    }
+
+    .sticky-btn {
+      background: var(--gold-dark);
+      color: var(--red-dark);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      white-space: nowrap
+    }
+
+    .toast {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1a;
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      z-index: 999;
+      opacity: 0;
+      transition: .3s;
+      pointer-events: none;
+      border: 2px solid var(--gold)
+    }
+
+    .toast.show {
+      opacity: 1
+    }
+
+    /* IMAGE PLACEHOLDERS & NEW LAYOUTS */
+    .img-placeholder {
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      overflow: hidden;
+      border: 2px dashed #bbb
+    }
+
+    .img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image-wrap {
+      margin-top: 32px;
+      width: 100%;
+      height: 260px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .pain-split {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 40px
+    }
+
+    .pain-hero-img {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .course-thumb {
+      width: 100%;
+      height: 180px;
+      border-radius: 20px 20px 0 0;
+      border-bottom: none;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+    }
+
+    .gallery-section {
+      margin-bottom: 48px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px
+    }
+
+    .gallery-item {
+      height: 180px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media(max-width:768px) {
+      .hero {
+        padding: 60px 20px 180px;
+      }
+
+      .hero-visual-frame {
+        aspect-ratio: 3/4;
+        border-radius: 20px 80px 20px 20px;
+        margin-top: 40px;
+      }
+
+      .hero-badge-glass {
+        left: 10px;
+        bottom: 20px;
+      }
+
+      .bridge-container {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .trust-badges {
+        align-items: center;
+      }
+
+      .bridge-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bridge-form-grid .full-width {
+        grid-column: span 1;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .pain-split {
+        grid-template-columns: 1fr
+      }
+
+      .solution-container {
+        grid-template-columns: 1fr
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr
+      }
+
+      .guarantee-container {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .guarantee-icon {
+        margin: 0 auto
+      }
+
+      .cta-form {
+        flex-direction: column
+      }
+
+      .cta-form input,
+      .cta-form button {
+        width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="toast" id="toast">Đã nhận thông tin! Chúng tôi sẽ liên hệ bạn sớm nhất 🎉</div>
+
+  <!-- HEADER -->
+  <header
+    style="background: #fff; width: 100%; position: relative; z-index: 100; padding: 12px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center;">
+      <img src="logo-2an.png" alt="2An Agency Logo" style="height: 48px; object-fit: contain;">
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="hero-badge">🎯 Khoá học thực chiến #1 Dành Cho Bạn</div>
+        <h1 class="hero-title">
+          Nhập Hàng Trung Quốc <span>Từ A–Z</span><br>Không Qua Trung Gian
+        </h1>
+        <p class="hero-sub">
+          Kinh doanh không lo vốn mỏng, không ôm hàng. Cô An An sẽ dẫn dắt từng bước đến khi tự tự tin nhập hàng, mở
+          shop và ra đơn!
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">1.700+</div>
+            <div class="lbl">Học viên thành công</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">39.000+</div>
+            <div class="lbl">Cộng đồng hỗ trợ</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">8 năm</div>
+            <div class="lbl">Kinh nghiệm Order</div>
+          </div>
+        </div>
+        <a href="#dang-ky" class="btn-primary" style="margin-right:12px">Bắt Đầu Lộ Trình Của Bạn ↓</a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-frame">
+          <img src="anh-14-bo-den.JPG" alt="Giảng viên An An">
+        </div>
+        <div class="hero-badge-glass">
+          <h4>Ngọc Tịnh Nguyễn</h4>
+          <p>CEO & Mentor Thực Chiến</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDGE FORM -->
+  <section class="bridge-form" id="dang-ky">
+    <div class="bridge-container">
+      <div class="bridge-text">
+        <h2>Đăng Ký Tư Vấn<br>Lộ Trình Phù Hợp</h2>
+        <p>Để lại thông tin, đích thân đội ngũ chuyên gia của cô Ngọc Tịnh Nguyễn sẽ gọi lại định hướng và sắp xếp lộ
+          trình học chuẩn xác nhất với nguồn vốn hiện tại của bạn!</p>
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <div class="trust-badge-icon">✓</div>
+            Thông tin được bảo mật 100%
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">✓</div>
+            Tư vấn chiến lược hoàn toàn miễn phí
+          </div>
+        </div>
+      </div>
+      <div class="bridge-form-wrapper">
+        <div class="form-group full-width">
+          <input type="text" id="h-name" placeholder="Họ và tên của bạn *" aria-label="Họ và tên của bạn" />
+        </div>
+        <div class="bridge-form-grid">
+          <div class="form-group">
+            <input type="tel" id="h-phone" placeholder="Số điện thoại *" aria-label="Số điện thoại" />
+          </div>
+          <div class="form-group">
+            <select id="h-course" aria-label="Chọn khoá học quan tâm">
+              <option value="">Quan tâm khoá học nào? *</option>
+              <option>E-Learning Nhập Hàng TQ (Online 6tr)</option>
+              <option>Thực Chiến Mở Shop Offline (12tr)</option>
+              <option>Kinh Doanh Order từ A-Z</option>
+              <option>Tôi muốn tư vấn lộ trình</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full-width" style="margin-top: 16px;">
+          <select id="h-goal" aria-label="Mục tiêu của bạn">
+            <option value="">Mục tiêu số 1 của bạn là gì? *</option>
+            <option>Tuyển nguồn hàng order rẻ</option>
+            <option>Muốn mở shop để khởi nghiệp</option>
+            <option>Tối ưu chi phí hàng hóa cho kho</option>
+            <option>Học tiếng Trung để mua hàng</option>
+          </select>
+        </div>
+        <button class="form-submit full-width" style="font-size: 17px; margin-top: 14px; padding: 18px;"
+          onclick="submitForm('hero')">ĐĂNG KÝ NGAY — Tư Vấn Lộ Trình 100% Khớp Vốn</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain">
+    <div class="pain-container">
+      <p class="pain-intro">Bạn đang <span>mắc kẹt</span> ở đâu trong hành trình nhập hàng Trung Quốc?</p>
+      <p class="pain-sub">Hàng nghìn người đã từng như bạn — trước khi họ tìm đến An An Hoa Ngữ</p>
+      <div class="pain-grid" style="margin-top:40px">
+        <div class="pain-card">
+          <div class="icon">😰</div>
+          <h4>Sợ bị lừa, mất tiền</h4>
+          <p>Không biết shop nào uy tín, mua phải hàng kém, mất vốn</p>
+        </div>
+        <div class="pain-card">
+          <div class="icon">🈚</div>
+          <h4>Không rành tiếng Trung</h4>
+          <p>Bị rào cản ngôn ngữ, phụ thuộc vào trung gian mất phí</p>
+        </div>
+        <div class="pain-card">
+          <div class="icon">💸</div>
+          <h4>Không biết tính giá</h4>
+          <p>Tính sai chi phí về tay, ngỡ lãi nhưng thực ra lỗ sấp mặt</p>
+        </div>
+        <div class="pain-card">
+          <div class="icon">🔍</div>
+          <h4>Cạn ý tưởng nhập hàng</h4>
+          <p>Mù tịt xu hướng, không bắt được trend, nhập kẹt kho</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <div class="solution-container">
+      <div>
+        <img src="anh-3-khoa-hoc-thuc-chien.png.png" alt="Khoá học thực chiến kinh doanh Order từ A-Z"
+          style="width:100%; height:auto; border-radius:24px; box-shadow:0 10px 40px rgba(0,0,0,0.12);">
+      </div>
+      <div class="solution-content">
+        <p class="section-title">Lộ Trình Học Rõ Ràng — Không Lo Bị Mất Phương Hướng</p>
+        <p style="color:var(--text-muted);font-size:15px;margin:12px 0 24px;line-height:1.7">An An Hoa Ngữ là đơn vị
+          <strong>duy nhất</strong> tại Việt Nam vừa dạy tiếng Trung, vừa dạy thực hành nhập hàng trực tiếp trên giao
+          diện tiếng Trung — cầm tay chỉ việc từng bước.
+        </p>
+        <ul class="solution-list">
+          <li>
+            <div class="check">✓</div><span>Học thực chiến 50% lý thuyết — 50% thực hành, nhập đơn thật ngay trong
+              khoá</span>
+          </li>
+          <li>
+            <div class="check">✓</div><span>Thao tác trực tiếp trên 5 sàn: Taobao / 1688 / Pinduoduo / Dewu /
+              Xiaohongshu</span>
+          </li>
+          <li>
+            <div class="check">✓</div><span>Ứng dụng AI để tìm hàng, check shop đối thủ, tối ưu chi phí</span>
+          </li>
+          <li>
+            <div class="check">✓</div><span>Mentor đồng hành cố vấn trong 3 năm — hỗ trợ 1:1 cầm tay chỉ việc</span>
+          </li>
+          <li>
+            <div class="check">✓</div><span>Cộng đồng hơn 39.000 thành viên cùng nhau phát triển, chia sẻ kinh
+              nghiệm</span>
+          </li>
+        </ul>
+        <a href="#dang-ky" class="btn-primary" style="margin-top:24px;display:inline-block">Tôi Muốn Học Thử Ngay</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="courses">
+    <div class="courses-container">
+      <p class="section-title">Chọn Khoá Học Phù Hợp Với Bạn</p>
+      <p class="courses-sub">Dù bạn ở đâu, dù ngân sách bao nhiêu — đều có khoá phù hợp</p>
+      <div class="courses-grid">
+        <div class="course-card">
+
+          <div class="course-header">
+            <div class="course-badge">E-Learning</div>
+            <h3>Nhập Hàng TQ Thực Chiến</h3>
+            <div class="price">6.000.000đ <span>/ khoá</span></div>
+          </div>
+          <div class="course-body">
+            <ul class="course-features">
+              <li>4 Module — 170 phút video thực chiến</li>
+              <li>Học 100% online, học mọi lúc mọi nơi</li>
+              <li>Có checklist & file mẫu đính kèm</li>
+              <li>Tặng khoá 15 phút: Xác định vốn & chân dung khách hàng</li>
+              <li>Hỗ trợ 1:1 cầm tay chỉ việc</li>
+              <li>Mentor đồng hành 3 năm</li>
+            </ul>
+          </div>
+          <div class="course-cta"><button onclick="scrollToForm()">Đăng Ký Khoá Online</button></div>
+        </div>
+        <div class="course-card featured">
+          <div class="featured-badge">⭐ Được chọn nhiều nhất</div>
+
+          <div class="course-header">
+            <div class="course-badge">Offline + Mentoring</div>
+            <h3>Thực Chiến Mở Shop</h3>
+            <div class="price">12.000.000đ <span>/ khoá</span></div>
+          </div>
+          <div class="course-body">
+            <ul class="course-features">
+              <li>4 buổi học trực tiếp với cô giáo Ngọc Tịnh</li>
+              <li>Thực hành nhập đơn thật ngay trong lớp</li>
+              <li>Cầm tay chỉ việc 5 sàn TMDT Trung Quốc</li>
+              <li>Tìm sản phẩm WIN + làm OEM + Hero Product</li>
+              <li>Cố vấn 1:1 trong 3 năm sau khoá</li>
+              <li>Trọn bộ tài liệu trị giá 3.000.000đ</li>
+              <li>15–20 học viên/lớp — kết nối cộng đồng</li>
+            </ul>
+          </div>
+          <div class="course-cta"><button onclick="scrollToForm()">Đăng Ký Khoá Offline</button></div>
+        </div>
+        <div class="course-card">
+
+          <div class="course-header">
+            <div class="course-badge">Kinh Doanh</div>
+            <h3>Order Từ A–Z</h3>
+            <div class="price" style="font-size:20px">Liên hệ tư vấn</div>
+          </div>
+          <div class="course-body">
+            <ul class="course-features">
+              <li>Thiết lập ngân sách & vẽ chân dung khách hàng</li>
+              <li>Chọn nguồn hàng & nhập không qua trung gian</li>
+              <li>Xây dựng kênh Fanpage / Group / TikTok</li>
+              <li>Marketing Plan — Content Plan thực chiến</li>
+              <li>Kịch bản sale & chốt đơn chuyên nghiệp</li>
+              <li>Quản lý kho, dòng tiền, hiệu suất nhân sự</li>
+            </ul>
+          </div>
+          <div class="course-cta"><button onclick="scrollToForm()">Tư Vấn Ngay</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof">
+    <div class="proof-container">
+      <h2 class="proof-title">Con Số Không Biết Nói Dối</h2>
+      <p class="proof-sub">Hơn 1.700 học viên đã thay đổi cuộc đời với An An Hoa Ngữ</p>
+      <div style="margin-bottom: 48px; border-radius:24px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,0.15);">
+        <img src="anh-4-con-so-tu-hao.png.png" alt="Gương mặt An An Hoa Ngữ và các con số tự hào"
+          style="width:100%; height:auto; display:block;">
+      </div>
+
+      <div class="gallery-section">
+        <h3 style="color:#fff;margin-bottom:8px;font-size:24px">Hình Ảnh Thực Tế Lớp Học & Đơn Hàng</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item" style="overflow:hidden"><img src="anh-6-lop-fpt.PNG" alt="Lớp học 1"
+              style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="gallery-item" style="overflow:hidden"><img src="anh-7-lop-offline-dong.jpg" alt="Lớp học 2"
+              style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="gallery-item" style="overflow:hidden"><img src="anh-11-selfie-lop-hoc.JPG" alt="Tập thể lớp học"
+              style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="overflow:hidden; flex-shrink:0;"><img src="anh-1-co-giao.png.JPG"
+                alt="Avatar" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div>
+              <div class="review-author">Học viên từ Hải Phòng</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Ngày đầu học đã đặt đơn 20 cái máy sấy quần áo. Ngày 2 đặt 200 hộp bột giặt. Nguồn cô
+            giáo text là em yên tâm mua thôi!"</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="overflow:hidden; flex-shrink:0;"><img src="anh-13-hai-ban-nu.PNG"
+                alt="Avatar sinh viên" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div>
+              <div class="review-author">Lớp Thực Chiến Mở Shop</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Bữa học xong lớp order em hiểu rõ từng bước. Tự order sướng đã man, hàng độc quyền tự
+            định giá, cạnh tranh với ai cũng thắng!"</p>
+        </div>
+        <!-- Deleted third review to avoid duplicate photo -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-container">
+      <p class="section-title">Câu Hỏi Thường Gặp</p>
+      <p class="faq-sub">Giải đáp mọi băn khoăn trước khi bạn quyết định</p>
+      <div id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee">
+    <div class="guarantee-container">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-content">
+        <h3>Cam Kết Đồng Hành 3 Năm</h3>
+        <p>Sau khi hoàn thành khoá học, bạn được mentor đồng hành cố vấn trong 3 năm — hỗ trợ 1:1 cầm tay chỉ việc mọi
+          lúc bạn cần. Bất kỳ vấn đề nào phát sinh trong quá trình kinh doanh, đội ngũ An An Hoa Ngữ luôn ở đây bên cạnh
+          bạn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta-container">
+      <h2>Đừng Để Cơ Hội Trôi Qua <span>Thêm 1 Ngày Nữa</span></h2>
+      <p>Lớp học giới hạn 15–20 học viên để đảm bảo chất lượng. Điền số điện thoại để được tư vấn miễn phí và giữ suất
+        ngay hôm nay.</p>
+      <div class="cta-form">
+        <input type="tel" id="f-phone" placeholder="Số điện thoại Zalo/Hotline của bạn"
+          aria-label="Số điện thoại Zalo/Hotline của bạn" />
+        <button onclick="submitForm('final')">Giữ Suất Ngay →</button>
+      </div>
+      <p class="cta-note">Hoặc gọi hotline tư vấn miễn phí: <strong style="color:var(--gold)">0974 818 534</strong> —
+        <strong style="color:var(--gold)">0935 357 312</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>An An Hoa Ngữ</h3>
+        <p style="color:var(--gold-dark);font-style:italic;margin-bottom:8px">"Dạy Chân Thành — Học Thành Danh"</p>
+        <p>Cty TNHH An An Hoa Ngữ<br>MST: 0402167094<br>49 Phần Lăng 2, Thanh Khê, Đà Nẵng</p>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Hệ</h4>
+        <ul>
+          <li>📞 0974 818 534</li>
+          <li>📞 Hotline: 0935 357 312</li>
+          <li>✉️ Ananhoangu@gmail.com</li>
+          <li>🌐 hocnhaphangtrungquoc.com</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Mạng Xã Hội</h4>
+        <ul>
+          <li><a href="https://facebook.com/ananhoangu" target="_blank">📘 Fanpage An An Hoa Ngữ</a></li>
+          <li><a href="https://www.tiktok.com/@ananhoangu" target="_blank">🎵 TikTok @ananhoangu</a></li>
+          <li><a href="https://www.facebook.com/Ngoctinhnguyen2020" target="_blank">👩‍🏫 FB Cô Ngọc Tịnh</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Cty TNHH An An Hoa Ngữ. All rights reserved.</span>
+      <span>MST: 0402167094</span>
+    </div>
+  </footer>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-bar">
+    <div class="sticky-text">🔥 Khoá học giới hạn — <span>Còn vài suất cuối!</span></div>
+    <button class="sticky-btn" onclick="scrollToForm()">Đăng Ký Tư Vấn Miễn Phí →</button>
+  </div>
+
+  <script>
+    const faqs = [
+      { q: "Học xong có làm được ngay không?", a: "Có! Khoá học được thiết kế 50% lý thuyết — 50% thực hành. Bạn sẽ đặt đơn thật ngay trong khoá học. Nhiều học viên đã có đơn hàng đầu tiên ngay buổi học đầu tiên." },
+      { q: "Không biết tiếng Trung có học được không?", a: "Được hoàn toàn! An An Hoa Ngữ là đơn vị duy nhất hướng dẫn thực hành trực tiếp trên giao diện tiếng Trung. Cô giáo sẽ dịch và hướng dẫn từng bước. Tặng kèm khoá tiếng Trung cơ bản miễn phí cho học viên." },
+      { q: "Không có vốn, không có hộ chiếu có làm được không?", a: "Có! Bạn không cần hộ chiếu để nhập hàng online. Về vốn — khoá học dạy bạn xác định nguồn vốn phù hợp, thậm chí có thể bắt đầu với vốn rất nhỏ bằng mô hình order (gom hàng theo đơn)." },
+      { q: "Làm sao kiếm tiền từ nghề order?", a: "Có 3 cách chính: (1) Mở shop bán lẻ nhập hàng TQ về bán; (2) Làm dịch vụ order — mua hộ và hưởng phí; (3) Kết hợp cả hai. Khoá học sẽ giúp bạn chọn mô hình phù hợp nhất với hoàn cảnh của mình." },
+      { q: "Bên TQ có những mặt hàng gì bán được ở VN?", a: "Cực kỳ nhiều — mỹ phẩm nội địa TQ, đồ gia dụng, thời trang, phụ kiện điện thoại, đồ chơi trẻ em... Khoá học có module riêng về tìm hàng ngách và chọn sản phẩm WIN dựa theo xu hướng Douyin/Xiaohongshu." },
+      { q: "Có cam kết đầu ra không?", a: "Có! An An Hoa Ngữ cam kết đồng hành mentor trong 3 năm sau khi hoàn thành khoá. Hỗ trợ 1:1 cầm tay chỉ việc bất cứ khi nào bạn gặp vấn đề trong quá trình kinh doanh." },
+      { q: "Học được gì sau khoá học?", a: "Bạn sẽ: tự nhập hàng trực tiếp từ 5 sàn TQ không qua trung gian; biết tính giá về tay và giá bán ra; biết tìm hàng ngách cạnh tranh cao; biết đàm phán và xử lý khiếu nại; biết marketing và chốt sale; có lộ trình kinh doanh rõ ràng." },
+      { q: "Nhập ít có cần hoá đơn không?", a: "Khoá học sẽ hướng dẫn cụ thể về vấn đề pháp lý, ngưỡng nhập hàng, và cách hoạt động hợp pháp. Đây là nội dung quan trọng được dạy rõ ràng trong chương trình." }
+    ];
+    const faqEl = document.getElementById('faq-list');
+    faqs.forEach((f, i) => {
+      const item = document.createElement('div');
+      item.className = 'faq-item';
+      item.innerHTML = `<div class="faq-q" onclick="toggleFaq(this)">${f.q}<span class="arrow">⌄</span></div><div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>`;
+      faqEl.appendChild(item);
+    });
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+    function scrollToForm() {
+      document.getElementById('dang-ky').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }
+    function submitForm(src) {
+      let phone = '';
+      if (src === 'hero') {
+        const name = document.getElementById('h-name').value.trim();
+        phone = document.getElementById('h-phone').value.trim();
+        const course = document.getElementById('h-course').value;
+        const goal = document.getElementById('h-goal').value;
+        if (!name || !phone || !course || !goal) { showToast('⚠️ Vui lòng điền đầy đủ thông tin!'); return; }
+      } else {
+        phone = document.getElementById('f-phone').value.trim();
+        if (!phone) { showToast('⚠️ Vui lòng nhập số điện thoại!'); return; }
+      }
+      showToast('Đã nhận thông tin! Chúng tôi sẽ liên hệ bạn trong 15 phút 🎉');
+    }
+  </script>
+</body>
+
+</html>
