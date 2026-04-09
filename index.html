@@ -361,14 +361,16 @@
     .prize-card-body { padding: 28px 32px; }
     .prize-list { list-style: none; }
     .prize-list li {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 12px 0; border-bottom: 1px solid #f0f0f0;
+      position: relative;
+      padding: 12px 0 12px 28px;
+      border-bottom: 1px solid #f0f0f0;
       font-size: 15px; color: var(--text-dark);
+      line-height: 1.5;
     }
     .prize-list li:last-child { border-bottom: none; }
     .prize-list li::before {
       content: '✓'; color: var(--orange); font-weight: 900;
-      font-size: 16px; flex-shrink: 0; margin-top: 1px;
+      font-size: 16px; position: absolute; left: 0; top: 12px;
     }
     .prize-list li strong { font-weight: 700; }
 
@@ -925,11 +927,11 @@
           Trải nghiệm giải Trail danh giá giữa thiên nhiên Jeju hùng vĩ, nơi mỗi con dốc, mỗi đoạn rừng đều khiến trái tim người chạy rung lên vì xúc động.
         </p>
         <ul class="prize-list">
-          <li><span>Dành cho tất cả các VĐV thông qua hình thức <strong>quay số may mắn (Lottery)</strong></span></li>
-          <li><span>Suất tham dự được Runcation Vietnam <strong>tài trợ toàn phần</strong></span></li>
-          <li><span>Đảo Jeju, Hàn Quốc — giải ultra trail danh giá hàng đầu châu Á</span></li>
-          <li><span>Kết quả minh bạch, được xác minh bởi ban tổ chức</span></li>
-          <li><span>Hỗ trợ thủ tục chuẩn bị thi đấu quốc tế từ team Runcation</span></li>
+          <li>Dành cho tất cả các VĐV thông qua hình thức <strong>quay số may mắn (Lottery)</strong></li>
+          <li>Suất tham dự được Runcation VietNam <strong>tài trợ toàn phần</strong></li>
+          <li>Đảo Jeju, Hàn Quốc — giải ultra trail danh giá hàng đầu châu Á</li>
+          <li>Kết quả minh bạch, được xác minh bởi ban tổ chức</li>
+          <li>Hỗ trợ thủ tục chuẩn bị thi đấu quốc tế từ team Runcation</li>
         </ul>
       </div>
     </div>
